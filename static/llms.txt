@@ -13,7 +13,6 @@
 - A home-screen widget with the next Cake Days.
 - The name under the icon: KashCake, Cake Days, Birthdays or Celebrations.
 - Edit in Contacts: fix a date in the Contacts app from KashCake.
-- Leap-day birthdays: a February 29 date is celebrated on February 28 in other years.
 
 ## Privacy
 
