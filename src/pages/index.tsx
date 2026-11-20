@@ -39,7 +39,7 @@ const TILES: Tile[] = [
   {title: 'Home-screen widget', body: 'The next Cake Days without opening the app.'},
   {title: 'Your app name', body: 'KashCake, Cake Days, Birthdays or Celebrations. Same icon.'},
   {title: 'Edit in Contacts', body: 'Fix a date in your Contacts app, straight from KashCake.'},
-  {title: 'Missed reminders', body: 'Phone off at reminder time? It shows when the phone is back on, unless the day has passed.'},
+  {title: 'Leap-day birthdays', body: 'Born on February 29? KashCake celebrates on February 28 in other years.'},
   {title: 'Read only', body: 'KashCake never adds, changes or deletes a contact.'},
 ];
 
@@ -135,7 +135,7 @@ function Shots(): ReactNode {
     <section className="kc-section kc-section--mist">
       <div className="container">
         <Heading as="h2" className="kc-heading">
-          Remind, wish and find.
+          Remind, wish, and find.
         </Heading>
         <div className="kc-shots">
           {SHOTS.map((s) => (
