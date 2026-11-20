@@ -38,7 +38,7 @@ const TILES: Tile[] = [
   {title: 'Know when it’s a big one', body: '“Turning 40” when the birth year is known, and a badge for milestones.'},
   {title: 'Next Cake Days at a glance', body: 'On your home screen, without opening the app.'},
   {title: 'Name it your way', body: 'KashCake, Cake Days, Birthdays or Celebrations. Same icon.'},
-  {title: 'Change a date in one tap', body: 'KashCake opens the contact in Contacts, ready to edit.'},
+  {title: 'Update a contact in one tap', body: 'KashCake opens it in Contacts, ready to edit.'},
 ];
 
 function Hero(): ReactNode {
