@@ -228,7 +228,8 @@ a:focus-visible, button:focus-visible, .navbar__link:focus-visible, .footer__lin
   .kc-hero__front { width: 220px; }
 }
 @media (max-width: 996px) {
-  .kc-hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+  /* minmax(0, 1fr): a plain 1fr column grows to the art's width and the hero cuts off its right side. */
+  .kc-hero__inner { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
   .kc-hero__art { justify-content: center; }
   .kc-shots { grid-template-columns: 1fr; gap: 2.5rem; }
   .kc-tiles, .kc-get, .kc-flow { grid-template-columns: 1fr; }
@@ -237,9 +238,10 @@ a:focus-visible, button:focus-visible, .navbar__link:focus-visible, .footer__lin
   .kc-section { padding: 3.5rem 0; }
   .kc-hero__title { font-size: clamp(2.1rem, 10vw, 2.6rem); }
   .kc-hero__art { padding-right: 1.5rem; }
-  .kc-hero__back { width: 140px; transform: translate(28px, -24px) rotate(-4deg); }
-  .kc-hero__front { width: 185px; }
-  .kc-hero__kash { width: 100px; left: -18px; }
+  /* Sized by the screen so both phones fit down to 280px, a large display size or a folded phone. */
+  .kc-hero__back { width: min(140px, 34vw); transform: translate(28px, -24px) rotate(-4deg); }
+  .kc-hero__front { width: min(185px, 46vw); }
+  .kc-hero__kash { width: min(100px, 26vw); left: -18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
