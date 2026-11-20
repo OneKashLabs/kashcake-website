@@ -35,11 +35,10 @@ const SHOTS: Shot[] = [
 type Tile = {title: string; body: string};
 
 const TILES: Tile[] = [
-  {title: 'Ages and milestones', body: '“Turning 40” when the birth year is known, and a badge for the big ones.'},
-  {title: 'Home-screen widget', body: 'The next Cake Days without opening the app.'},
-  {title: 'Your app name', body: 'KashCake, Cake Days, Birthdays or Celebrations. Same icon.'},
-  {title: 'Edit in Contacts', body: 'Fix a date in your Contacts app, straight from KashCake.'},
-  {title: 'Read only', body: 'KashCake never adds, changes or deletes a contact.'},
+  {title: 'Know when it’s a big one', body: '“Turning 40” when the birth year is known, and a badge for milestones.'},
+  {title: 'Next Cake Days at a glance', body: 'On your home screen, without opening the app.'},
+  {title: 'Name it your way', body: 'KashCake, Cake Days, Birthdays or Celebrations. Same icon.'},
+  {title: 'Spot a wrong date?', body: 'Fix it in Contacts, straight from KashCake.'},
 ];
 
 function Hero(): ReactNode {
@@ -52,7 +51,7 @@ function Hero(): ReactNode {
             <br />
             a Cake Day.
           </Heading>
-          <p className="kc-hero__lead">Birthday and anniversary reminders from your contacts.</p>
+          <p className="kc-hero__lead">A reminder before every birthday and anniversary in your contacts.</p>
           <div className="kc-hero__cta">
             <Link className="kc-btn kc-btn--pink" to="/beta/">
               Join the beta
@@ -93,8 +92,8 @@ function Privacy(): ReactNode {
   return (
     <section className="kc-privacy">
       <div className="container">
-        <Heading as="h2">No internet access.</Heading>
-        <p>KashCake can’t reach the internet. It reads your contacts, never changes them, and collects nothing.</p>
+        <Heading as="h2">Your contacts stay on your phone.</Heading>
+        <p>KashCake has no internet access. It reads your contacts, never changes them, and collects nothing.</p>
         <Link href={PRIVACY}>Privacy policy</Link>
       </div>
     </section>
@@ -104,9 +103,9 @@ function Privacy(): ReactNode {
 type Step = {title: string; body: string};
 
 const STEPS: Step[] = [
-  {title: 'Dates in your contacts', body: 'The birthdays and anniversaries you already keep.'},
-  {title: 'Turn them on', body: 'One switch for birthdays, one for anniversaries.'},
-  {title: 'Change a date in Contacts', body: 'KashCake updates, even while it’s closed.'},
+  {title: 'Keep dates in Contacts', body: 'The birthdays and anniversaries you already have.'},
+  {title: 'Turn them on', body: 'Birthdays, anniversaries, or both.'},
+  {title: 'Fix a date in Contacts', body: 'KashCake picks it up, even while it’s closed.'},
 ];
 
 function HowItWorks(): ReactNode {
@@ -114,7 +113,7 @@ function HowItWorks(): ReactNode {
     <section className="kc-section">
       <div className="container">
         <Heading as="h2" className="kc-heading">
-          How it works with your contacts
+          Nothing new to type in.
         </Heading>
         <ol className="kc-flow">
           {STEPS.map((s) => (
@@ -134,7 +133,7 @@ function Shots(): ReactNode {
     <section className="kc-section kc-section--mist">
       <div className="container">
         <Heading as="h2" className="kc-heading">
-          Remind, wish, and find.
+          Be the one who remembers.
         </Heading>
         <div className="kc-shots">
           {SHOTS.map((s) => (
@@ -157,7 +156,7 @@ function Tiles(): ReactNode {
     <section className="kc-section">
       <div className="container">
         <Heading as="h2" className="kc-heading">
-          Also in KashCake
+          The little things.
         </Heading>
         <div className="kc-tiles">
           {TILES.map((t) => (
