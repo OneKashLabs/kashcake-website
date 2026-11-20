@@ -4,6 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 const DESCRIPTION =
   'Birthday and anniversary reminders from your contacts on Android. No internet access. Free and open source.';
 
+// The one organization every OneKash Labs site points to, defined on onekash.org.
+const ORG = {'@type': 'Organization', '@id': 'https://onekash.org/#org', name: 'OneKash Labs', url: 'https://onekash.org'};
+
 const config: Config = {
   title: 'KashCake',
   tagline: 'Never forget a Cake Day',
@@ -42,7 +45,19 @@ const config: Config = {
         ],
         offers: {'@type': 'Offer', price: '0', priceCurrency: 'USD'},
         sameAs: ['https://github.com/OneKashLabs/KashCake'],
-        author: {'@type': 'Organization', name: 'OneKash Labs', url: 'https://onekash.org'},
+        author: ORG,
+        publisher: ORG,
+      }),
+    },
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'KashCake',
+        url: 'https://kashcake.onekash.org/',
+        publisher: ORG,
       }),
     },
   ],

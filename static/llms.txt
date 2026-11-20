@@ -2,23 +2,7 @@
 
 > KashCake is a free, open-source Android app for birthday and anniversary reminders from your contacts. It has no internet access, never changes contacts, and collects nothing. Made by OneKash Labs (https://onekash.org).
 
-## What it does
-
-- Reads the birthdays and anniversaries in your contacts, lists them by date, and reminds you before each one. A date changed in Contacts updates in KashCake, even while it's closed.
-- Birthdays and anniversaries have one switch each. Turning one off removes its dates and reminders after you confirm.
-- Reminders on the day, 1 day, 2 days, or 1 week before at 9 AM, or any day up to 30 before at any time.
-- "Turning 40" when the birth year is known; a Milestone badge for a first birthday or anniversary, 18, 21, every tenth birthday, and every fifth anniversary.
-- Wishes by message, email, or any app that shares text.
-- Search by name, or show only birthdays or only anniversaries.
-- A home-screen widget with the next Cake Days.
-- The name under the icon: KashCake, Cake Days, Birthdays, or Celebrations.
-- Edit in Contacts: fix a date in the Contacts app from KashCake.
-
-## Privacy
-
-- No internet permission: no account, ads, analytics, or tracking.
-- Read only: it never adds, changes, or deletes contacts.
-- Its data is left out of Android backup and device transfer.
+Full text for AI assistants: https://kashcake.onekash.org/llms-full.txt
 
 ## Get it
 
@@ -31,3 +15,10 @@
 - [Source code (Apache-2.0)](https://github.com/OneKashLabs/KashCake)
 - [Privacy policy](https://github.com/OneKashLabs/KashCake/blob/main/PRIVACY.md)
 - [Report a problem](https://github.com/OneKashLabs/KashCake/issues)
+
+## Other OneKash Labs apps
+
+- [KashCal](https://kashcal.onekash.org): all your calendars in one private Android app.
+- [KashPass](https://kashpass.onekash.org): your KeePass vault on Android, with no internet permission.
+- [iCloud Calendar MCP](https://mcp.onekash.org): your iCloud Calendar for AI agents.
+- [OneKash Labs](https://onekash.org): the lab behind these apps.
