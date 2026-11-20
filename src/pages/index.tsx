@@ -14,15 +14,15 @@ type Shot = {img: string; alt: string; title: string; caption: string};
 const SHOTS: Shot[] = [
   {
     img: '/img/app/reminder_sheet.webp',
-    alt: 'Reminder choices: on the day, 1 day, 2 days or 1 week before at 9 AM, or a custom time',
+    alt: 'Reminder choices: on the day, 1 day, 2 days, or 1 week before at 9 AM, or a custom time',
     title: 'Pick your reminder',
     caption: 'On the day, or up to 30 days before, at the time you choose.',
   },
   {
     img: '/img/app/quick_view.webp',
-    alt: 'A birthday sheet: turning 40, with message, email and share buttons',
+    alt: 'A birthday sheet: turning 40, with message, email, and share buttons',
     title: 'Send a wish',
-    caption: 'By message, email or any app that shares text.',
+    caption: 'By message, email, or any app that shares text.',
   },
   {
     img: '/img/app/search_anniversaries.webp',
@@ -37,7 +37,7 @@ type Tile = {title: string; body: string};
 const TILES: Tile[] = [
   {title: 'Know when it’s a big one', body: '“Turning 40” when the birth year is known, and a badge for milestones.'},
   {title: 'Next Cake Days at a glance', body: 'On your home screen, without opening the app.'},
-  {title: 'Name it your way', body: 'KashCake, Cake Days, Birthdays or Celebrations. Same icon.'},
+  {title: 'Name it your way', body: 'KashCake, Cake Days, Birthdays, or Celebrations. Same icon.'},
   {title: 'Update a contact in one tap', body: 'KashCake opens it in Contacts, ready to edit.'},
 ];
 
