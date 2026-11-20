@@ -1,0 +1,252 @@
+/* Fonts are served from the site itself, so a visit makes no request to a third party. */
+@import '@fontsource-variable/bricolage-grotesque/opsz.css';
+@import '@fontsource-variable/figtree';
+
+/* KashCake site theme, laid out like the KashPass site. The colours come from the app icon: cream
+   for the sponge, pink for the frosting as the single accent, and teal for Kash. A light hero keeps
+   Kash, who is teal, visible. */
+:root {
+  --ifm-color-primary: #b0124d;
+  --ifm-color-primary-dark: #9e1045;
+  --ifm-color-primary-darker: #960f42;
+  --ifm-color-primary-darkest: #7b0c36;
+  --ifm-color-primary-light: #c21455;
+  --ifm-color-primary-lighter: #ca1559;
+  --ifm-color-primary-lightest: #e01a63;
+
+  --kc-cream: #f6efe2;
+  --kc-pink: #d81b60;
+  --kc-pink-hover: #c2185b;
+  --kc-on-pink: #ffffff;
+  --kc-teal: #0e6f61;
+  --kc-on-teal: #ffffff;
+  --kc-mist: #f4f1ea;
+  --kc-paper: #fcfbf7;
+  --kc-ink: #1a1c20;
+  --kc-soft: #4a4d55;
+  --kc-line: rgba(26, 28, 32, 0.1);
+
+  --ifm-background-color: var(--kc-paper);
+  --ifm-background-surface-color: #ffffff;
+  --ifm-font-color-base: var(--kc-ink);
+  --ifm-font-family-base: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --ifm-font-family-monospace: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-background-color: rgba(252, 251, 247, 0.85);
+  --ifm-navbar-shadow: inset 0 -1px 0 var(--kc-line);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #f48fb1;
+  --ifm-color-primary-dark: #f17aa3;
+  --ifm-color-primary-darker: #f0709c;
+  --ifm-color-primary-darkest: #ec4f87;
+  --ifm-color-primary-light: #f7a4c0;
+  --ifm-color-primary-lighter: #f8aec7;
+  --ifm-color-primary-lightest: #fbcadb;
+
+  --kc-cream: #13201e;
+  --kc-pink: #f48fb1;
+  --kc-pink-hover: #f7a4c0;
+  --kc-on-pink: #2a0a16;
+  --kc-teal: #45c2ad;
+  --kc-on-teal: #08201c;
+  --kc-mist: #121a19;
+  --kc-paper: #0d1312;
+  --kc-ink: #edf1ef;
+  --kc-soft: #b5bdba;
+  --kc-line: rgba(255, 255, 255, 0.1);
+
+  --ifm-background-surface-color: #141d1b;
+  --ifm-navbar-background-color: rgba(13, 19, 18, 0.85);
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.08; }
+
+/* The blur would clip the mobile sidebar to the bar's height, so it is desktop only. */
+@media (min-width: 997px) {
+  .navbar { backdrop-filter: saturate(160%) blur(12px); }
+}
+.navbar__title { font-family: var(--ifm-heading-font-family); font-weight: 700; letter-spacing: -0.01em; font-size: 1.25rem; }
+
+/* Sections */
+.kc-section { padding: 5.5rem 0; }
+.kc-section + .kc-section { border-top: 1px solid var(--kc-line); }
+.kc-section--mist { background: var(--kc-mist); }
+.kc-heading { font-size: clamp(1.9rem, 4vw, 2.6rem); max-width: 40rem; margin: 0 0 2.5rem; }
+
+/* Hero: the cream of the icon. */
+.kc-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--kc-cream);
+  color: var(--kc-ink);
+  padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(4rem, 8vw, 5.5rem);
+  border-bottom: 1px solid var(--kc-line);
+}
+/* Sprinkles in the icon's frosting colours, fading out toward the text. */
+.kc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(#e91e63 2px, transparent 2.4px),
+    radial-gradient(#1e9e8a 2px, transparent 2.4px),
+    radial-gradient(#f2b632 2px, transparent 2.4px);
+  background-size: 46px 46px, 62px 62px, 54px 54px;
+  background-position: 0 0, 21px 31px, 37px 11px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 70% 75% at 75% 40%, #000 25%, transparent 78%);
+  pointer-events: none;
+}
+.kc-hero__inner { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; }
+.kc-hero__title { font-size: clamp(2.6rem, 4.6vw, 4.2rem); line-height: 0.98; margin: 0 0 1.25rem; color: var(--kc-ink); }
+.kc-hero__lead { font-size: 1.2rem; line-height: 1.55; color: var(--kc-soft); max-width: 31rem; margin: 0 0 2rem; }
+.kc-hero__cta { display: flex; flex-wrap: wrap; gap: 0.85rem; align-items: center; }
+.kc-hero__note { margin: 1.5rem 0 0; font-size: 0.95rem; color: var(--kc-soft); }
+
+.kc-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.4rem; border-radius: 999px;
+  font-weight: 700; font-size: 1.02rem; line-height: 1.2;
+  transition: transform 0.12s ease, background-color 0.12s ease;
+}
+.kc-btn:hover { text-decoration: none; transform: translateY(-1px); }
+.kc-btn--pink { background: var(--kc-pink); color: var(--kc-on-pink); }
+.kc-btn--pink:hover { color: var(--kc-on-pink); background: var(--kc-pink-hover); }
+.kc-btn--line { border: 1.5px solid var(--kc-soft); color: var(--kc-ink); }
+.kc-btn--line:hover { color: var(--kc-ink); border-color: var(--kc-ink); }
+
+/* Hero art: Settings behind the list, Kash with the cake on the list's edge. */
+.kc-hero__art { position: relative; display: flex; align-items: flex-end; }
+.kc-hero__art .kc-phone { margin: 0; }
+.kc-hero__back { width: 215px; transform: translate(40px, -36px) rotate(-4deg); opacity: 0.9; }
+.kc-hero__front { width: 255px; position: relative; z-index: 1; }
+.kc-hero__kash { position: absolute; z-index: 2; left: -34px; bottom: -18px; width: 132px; height: auto; pointer-events: none; }
+
+/* Phone frame, as on the KashPass site. */
+.kc-phone {
+  position: relative;
+  max-width: 252px;
+  margin: 0 auto 1.1rem;
+  border-radius: 30px;
+  padding: 9px;
+  background: linear-gradient(160deg, #2a2a2e, #0d0d10);
+  box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.45);
+}
+.kc-phone img { display: block; width: 100%; height: auto; border-radius: 22px; }
+
+/* Privacy statement */
+.kc-privacy { padding: 3rem 0; border-bottom: 1px solid var(--kc-line); }
+.kc-privacy h2 { font-size: clamp(1.6rem, 3vw, 2rem); margin: 0 0 0.5rem; }
+.kc-privacy p { font-size: 1.15rem; color: var(--kc-soft); margin: 0 0 0.5rem; max-width: 42rem; }
+.kc-privacy a { font-weight: 600; }
+
+/* How it works: three numbered steps in a row. */
+.kc-flow { counter-reset: flow; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.kc-flow li { counter-increment: flow; }
+.kc-flow li::before {
+  content: counter(flow);
+  display: flex; align-items: center; justify-content: center;
+  width: 2.3rem; height: 2.3rem; border-radius: 50%; margin-bottom: 0.9rem;
+  background: var(--kc-teal); color: var(--kc-on-teal); font-weight: 700;
+}
+.kc-flow h3 { font-size: 1.2rem; margin: 0 0 0.3rem; }
+.kc-flow p { margin: 0; color: var(--kc-soft); }
+
+/* Three phones with captions */
+.kc-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.kc-shot { margin: 0; text-align: center; }
+.kc-shot h3 { font-size: 1.1rem; margin: 0 0 0.25rem; }
+.kc-shot p { margin: 0 auto; font-size: 0.95rem; color: var(--kc-soft); max-width: 18rem; }
+
+/* Features: a plain two-column list, each item under a hairline. */
+.kc-tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 3rem; }
+.kc-tile { padding: 1.1rem 0 1.2rem; border-top: 1px solid var(--kc-line); }
+.kc-tile h3 { font-size: 1.2rem; margin: 0 0 0.3rem; }
+.kc-tile p { margin: 0; color: var(--kc-soft); }
+
+/* Get KashCake */
+.kc-get { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; max-width: 52rem; }
+.kc-get__item { display: flex; flex-direction: column; gap: 0.4rem; padding-top: 1.1rem; border-top: 2px solid var(--kc-pink); }
+.kc-get__item h3 { font-size: 1.2rem; margin: 0; }
+.kc-get__item p { margin: 0; color: var(--kc-soft); }
+.kc-get__item a { font-weight: 600; margin-top: auto; padding-top: 0.4rem; }
+.kc-cert { margin-top: 1.5rem; font-size: 0.9rem; color: var(--kc-soft); }
+.kc-cert code { font-size: 0.8rem; word-break: break-all; }
+.kc-requires { margin-top: 0.4rem; font-size: 0.95rem; color: var(--kc-soft); }
+
+/* Beta page */
+.kc-pagehead { background: var(--kc-cream); padding: 3.5rem 0 3rem; border-bottom: 1px solid var(--kc-line); }
+.kc-pagehead h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin: 0 0 0.75rem; }
+.kc-pagehead p { color: var(--kc-soft); font-size: 1.15rem; max-width: 36rem; margin: 0; }
+.kc-steps { counter-reset: step; list-style: none; padding: 0; margin: 0 0 3rem; max-width: 40rem; }
+.kc-steps li { counter-increment: step; position: relative; padding: 0 0 1.75rem 3.4rem; }
+.kc-steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: -0.1rem;
+  width: 2.3rem; height: 2.3rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kc-teal); color: var(--kc-on-teal); font-weight: 700;
+}
+.kc-steps h3 { font-size: 1.2rem; margin: 0 0 0.3rem; }
+.kc-steps p { margin: 0; }
+.kc-notes { max-width: 40rem; }
+.kc-notes h2 { font-size: 1.35rem; margin: 2rem 0 0.4rem; }
+.kc-notes p { margin: 0; }
+
+/* Footer: one centred row of links, as on the KashPass site. */
+.footer {
+  --ifm-footer-background-color: var(--kc-mist);
+  --ifm-footer-color: var(--kc-soft);
+  --ifm-footer-link-color: var(--kc-ink);
+  --ifm-footer-link-hover-color: var(--ifm-color-primary);
+  padding: 1.5rem 0 1.25rem;
+  border-top: 1px solid var(--kc-line);
+  font-size: 0.88rem;
+}
+.footer__links { margin-bottom: 0.6rem; display: flex; justify-content: center; }
+.footer__title { display: none; }
+.footer__col { margin-bottom: 0; }
+.footer .col { --ifm-spacing-horizontal: 0; }
+.footer__items { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.5rem; }
+.footer__item { padding: 0; }
+.footer__bottom { font-size: 0.82rem; color: var(--kc-soft); }
+.footer__bottom a { color: var(--ifm-color-primary); }
+
+/* Keyboard focus */
+a:focus-visible, button:focus-visible, .navbar__link:focus-visible, .footer__link-item:focus-visible {
+  outline: 3px solid var(--kc-pink); outline-offset: 2px; border-radius: 6px;
+}
+.kc-section a:focus-visible, .kc-privacy a:focus-visible { outline-color: var(--kc-ink); }
+
+@media (max-width: 1200px) and (min-width: 997px) {
+  .kc-hero__back { width: 185px; }
+  .kc-hero__front { width: 220px; }
+}
+@media (max-width: 996px) {
+  .kc-hero__inner { grid-template-columns: 1fr; gap: 3rem; }
+  .kc-hero__art { justify-content: center; }
+  .kc-shots { grid-template-columns: 1fr; gap: 2.5rem; }
+  .kc-tiles, .kc-get, .kc-flow { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .kc-section { padding: 3.5rem 0; }
+  .kc-hero__title { font-size: clamp(2.1rem, 10vw, 2.6rem); }
+  .kc-hero__art { padding-right: 1.5rem; }
+  .kc-hero__back { width: 140px; transform: translate(28px, -24px) rotate(-4deg); }
+  .kc-hero__front { width: 185px; }
+  .kc-hero__kash { width: 100px; left: -18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .kc-btn:hover { transform: none; }
+}
+
+/* Links inside running text are underlined, so they don't rely on colour alone. */
+.kc-privacy p a, .kc-steps p a, .kc-notes p a, .kc-get__item a, .kc-privacy > .container > a {
+  text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px;
+}
