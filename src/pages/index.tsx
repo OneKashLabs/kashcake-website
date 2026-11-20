@@ -115,14 +115,14 @@ function HowItWorks(): ReactNode {
         <Heading as="h2" className="kc-heading">
           Nothing new to type in.
         </Heading>
-        <ol className="kc-flow">
+        <ul className="kc-flow">
           {STEPS.map((s) => (
             <li key={s.title}>
               <Heading as="h3">{s.title}</Heading>
               <p>{s.body}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );

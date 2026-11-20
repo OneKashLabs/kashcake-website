@@ -145,15 +145,10 @@ h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.08; }
 .kc-privacy p { font-size: 1.15rem; color: var(--kc-soft); margin: 0 0 0.5rem; max-width: 42rem; }
 .kc-privacy a { font-weight: 600; }
 
-/* How it works: three numbered steps in a row. */
-.kc-flow { counter-reset: flow; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.kc-flow li { counter-increment: flow; }
-.kc-flow li::before {
-  content: counter(flow);
-  display: flex; align-items: center; justify-content: center;
-  width: 2.3rem; height: 2.3rem; border-radius: 50%; margin-bottom: 0.9rem;
-  background: var(--kc-teal); color: var(--kc-on-teal); font-weight: 700;
-}
+/* How it works: three points in a row. */
+.kc-flow { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+/* Not a sequence, so no numbers: a short teal bar marks each point. */
+.kc-flow li::before { content: ''; display: block; width: 2.5rem; height: 4px; border-radius: 2px; margin-bottom: 1rem; background: var(--kc-teal); }
 .kc-flow h3 { font-size: 1.2rem; margin: 0 0 0.3rem; }
 .kc-flow p { margin: 0; color: var(--kc-soft); }
 
