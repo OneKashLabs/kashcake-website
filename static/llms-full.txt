@@ -43,5 +43,5 @@ Apache License 2.0. The KashCake name, icon, and the Kash character are not cove
 
 - KashCal (https://kashcal.onekash.org): all your calendars in one private Android app.
 - KashPass (https://kashpass.onekash.org): your KeePass vault on Android, with no internet permission.
-- iCloud Calendar MCP (https://mcp.onekash.org): your iCloud Calendar for AI agents.
+- iCloud Calendar MCP (https://mcp.onekash.org): connect AI to your iCloud Calendar.
 - OneKash Labs (https://onekash.org): the lab behind these apps.
