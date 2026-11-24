@@ -13,7 +13,7 @@ export default function Beta(): ReactNode {
       <header className="kc-pagehead">
         <div className="container">
           <Heading as="h1">Join the beta</Heading>
-          <p>Get KashCake from Google Play before it goes public. Use one Google account for all three steps.</p>
+          <p>Get KashCake from Google Play before it goes public. Use the same Google account for each step.</p>
         </div>
       </header>
       <main className="kc-section">
